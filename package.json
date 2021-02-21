@@ -4,12 +4,23 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
     "jest": "^26.6.3"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samuel408/thought-manager.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/samuel408/thought-manager/issues"
+  },
+  "homepage": "https://github.com/samuel408/thought-manager#readme"
 }
