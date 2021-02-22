@@ -12,10 +12,22 @@ const app = express();
 
 
 // app.use(express.static('public'));
+function filterByQuery(query, notesArray) {
+    let filteredResults = notesArray;
+    if (query.title) {
+      filteredResults = filteredResults.filter(notes => notes.title === query.title);
+    }
+   
+    return filteredResults;
+  }
 
-app.get('/api/notes', (req, res) => {
-    res.json(notes);
-});
+  app.get('/api/notes', (req, res) => {
+    let results = notes;
+    if (req.query) {
+      results = filterByQuery(req.query, results);
+    }
+    res.json(results);
+  });
 
 
 app.listen(3002, () => {
