@@ -1,8 +1,11 @@
+
+
 let noteTitle;
 let noteText;
 let saveNoteBtn;
 let newNoteBtn;
 let noteList;
+
 
 if (window.location.pathname === '/notes') {
   noteTitle = document.querySelector('.note-title');
@@ -31,7 +34,9 @@ const getNotes = () =>
     headers: {
       'Content-Type': 'application/json',
     },
+    
   });
+
 
 const saveNote = (note) =>
   fetch('/api/notes', {
@@ -39,8 +44,11 @@ const saveNote = (note) =>
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(note),
-  });
+    body: JSON.stringify(createNewNote(note, notes)),
+ 
+  },
+
+  );
 
 const deleteNote = (id) =>
   fetch(`/api/notes/${id}`, {
@@ -178,3 +186,4 @@ if (window.location.pathname === '/notes') {
 }
 
 getAndRenderNotes();
+
