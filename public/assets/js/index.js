@@ -1,5 +1,3 @@
-
-
 let noteTitle;
 let noteText;
 let saveNoteBtn;
@@ -38,17 +36,18 @@ const getNotes = () =>
   });
 
 
+
 const saveNote = (note) =>
   fetch('/api/notes', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
     },
-    body: JSON.stringify(createNewNote(note, notes)),
+    body: JSON.stringify(note)
  
-  },
+  });
 
-  );
 
 const deleteNote = (id) =>
   fetch(`/api/notes/${id}`, {
@@ -186,4 +185,3 @@ if (window.location.pathname === '/notes') {
 }
 
 getAndRenderNotes();
-
