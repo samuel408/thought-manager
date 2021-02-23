@@ -37,7 +37,8 @@ samuel saldivar
 
 ## tests
 creative
- 
+  ![screenshot](./thoughtmanager.jpg "front page")
+
 ## Questions
 email:samuelsaldivar11@gmail.com
 github:https://github.com/Samuel408
